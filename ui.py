@@ -59,26 +59,40 @@ class Ui_MainWindow(object):
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
+
+        # 添加模型选择下拉框
         self.modelComboBox = QtWidgets.QComboBox(self.frame_5)
         self.modelComboBox.setGeometry(QtCore.QRect(20, 30, 120, 28))
         self.modelComboBox.setObjectName("modelComboBox")
         self.modelComboBox.addItem("")
         self.modelComboBox.addItem("")
         self.modelComboBox.addItem("")
+
+        # 添加分隔线
         self.line = QtWidgets.QFrame(self.frame_5)
         self.line.setGeometry(QtCore.QRect(0, 0, 591, 16))
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
+
+        # 添加按钮
         self.pushButton = QtWidgets.QPushButton(self.frame_5)
         self.pushButton.setGeometry(QtCore.QRect(150, 30, 93, 28))
         self.pushButton.setObjectName("pushButton")
+
         self.pushButton_2 = QtWidgets.QPushButton(self.frame_5)
-        self.pushButton_2.setGeometry(QtCore.QRect(280, 30, 93, 28))
+        self.pushButton_2.setGeometry(QtCore.QRect(250, 30, 93, 28))
         self.pushButton_2.setObjectName("pushButton_2")
+
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_5)
-        self.pushButton_3.setGeometry(QtCore.QRect(410, 30, 93, 28))
+        self.pushButton_3.setGeometry(QtCore.QRect(350, 30, 93, 28))
         self.pushButton_3.setObjectName("pushButton_3")
+
+        # 添加新按钮 - 模型性能
+        self.pushButton_4 = QtWidgets.QPushButton(self.frame_5)
+        self.pushButton_4.setGeometry(QtCore.QRect(450, 30, 93, 28))
+        self.pushButton_4.setObjectName("pushButton_4")
+
         self.frame_6 = QtWidgets.QFrame(self.frame_2)
         self.frame_6.setGeometry(QtCore.QRect(19, 119, 531, 421))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
@@ -137,28 +151,19 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.pushButton_3.clicked.connect(MainWindow.close)  # type: ignore
+        self.pushButton_3.clicked.connect(MainWindow.close)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "人脸表情分类系统"))
-        self.pushButton.setText(_translate("MainWindow", "上传图片"))
-        self.pushButton_2.setText(_translate("MainWindow", "开始识别"))
-        self.pushButton_3.setText(_translate("MainWindow", "关闭"))
-        self.label_5.setText(_translate("MainWindow", "识别窗口"))
-        self.label_2.setText(_translate("MainWindow", "识别结果为："))
-
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "人脸表情分类系统"))
-        self.modelComboBox.setItemText(0, _translate("MainWindow", "ViT"))
+        self.label.setText(_translate("MainWindow", "人脸表情识别操作平台"))
+        self.modelComboBox.setItemText(0, _translate("MainWindow", "Vision Transformer"))
         self.modelComboBox.setItemText(1, _translate("MainWindow", "CNN"))
         self.modelComboBox.setItemText(2, _translate("MainWindow", "ResNet18"))
         self.pushButton.setText(_translate("MainWindow", "上传图片"))
         self.pushButton_2.setText(_translate("MainWindow", "开始识别"))
         self.pushButton_3.setText(_translate("MainWindow", "关闭"))
+        self.pushButton_4.setText(_translate("MainWindow", "模型性能"))  # 设置新按钮文字
         self.label_5.setText(_translate("MainWindow", "识别窗口"))
         self.label_2.setText(_translate("MainWindow", "识别结果为："))
